@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="PDC03_MODULE04.activity02">
+    <ContentPage.Content>
+        <StackLayout>
+            <Label Text="Welcome to Binding Context!"/>
+            <ListView x:Name="EmployeeView" ItemsSource="{Binding Employees}">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <!--<TextCell Text="{Binding DisplayName}" TextColor="Black"
+                                Detail="{Binding Position}" DetailColor="Red"/>-->
+                        <ViewCell>
+                            <ViewCell.ContextActions>
+                                <MenuItem Text="Add" Clicked="Add Item"/>
+                                <MenuItem Text="Edit" Clicked="Edit Item"/>
+                                <MenuItem Text="Delete" Clicked="Delete Item"/>
+                            </ViewCell.ContextActions>
+                            <Grid>
+                                <Label Text="{Binding Displayname}" TextColor="Black"/>
+                            </Grid>
+                                
+                        </ViewCell>
+                            
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+                
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
